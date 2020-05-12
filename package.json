@@ -1,0 +1,31 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node application/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "bluebird": "^3.7.2",
+    "bootstrap": "^4.4.1",
+    "cookie-parser": "^1.4.4",
+    "csurf": "^1.11.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jquery": "^3.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.8.1",
+    "nunjucks": "^3.2.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "serve-favicon": "^2.5.0"
+  }
+}

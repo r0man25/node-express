@@ -1,0 +1,7 @@
+<a class="nav-link" href="/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+    Logout
+</a>
+
+<form id="logout-form" action="/logout" method="POST" style="display: none;">
+    {% include "./csrf.html" %}
+</form>

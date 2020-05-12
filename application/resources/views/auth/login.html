@@ -1,0 +1,43 @@
+{% extends "../layouts/app.html" %}
+
+{% block content %}
+<div class="container">
+    <form class="text-center form-signin" action="/login" method="post">
+        <h1 class="h3 mb-3 font-weight-normal">Logging in</h1>
+        {% include "../layouts/csrf.html" %}
+        <label class="{% if data.errors.email %}text-danger{% endif %} sr-only" for="email">Email address</label>
+        <input
+                type="email"
+                class="form-control {% if data.errors.email %}is-invalid{% endif %}"
+                id="email"
+                name="email"
+                placeholder="Email address"
+                value="{% if data.data.email %}{{data.data.email}}{% endif %}"
+                required=""
+                {% if data.errors %}{% else %}autofocus=""{% endif %}
+        >
+        {% if data.errors.email %}
+        <small class="text-danger">{{ data.errors.email[0] }}</small>
+        {% endif %}
+
+        <label class="{% if data.errors.password %}text-danger{% endif %} sr-only" for="password">Password</label>
+        <input
+                type="password"
+                class="form-control {% if data.errors.password %}is-invalid{% endif %}"
+                id="password"
+                name="password"
+                placeholder="Password"
+        >
+        {% if data.errors.password %}
+        <small class="text-danger">{{ data.errors.password[0] }}</small>
+        {% endif %}
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="remember"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
+    </form>
+</div>
+{% endblock %}
